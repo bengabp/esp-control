@@ -1,7 +1,8 @@
 import random
-import network
+import network # type: ignore
 import time
-import machine
+import machine # type: ignore
+
 
 class BoardManager:
     def __init__(self):
