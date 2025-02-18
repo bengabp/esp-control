@@ -6,15 +6,15 @@ import machine # type: ignore
 
 class BoardManager:
     def __init__(self):
-        self.home_wifi_ssid = 'natmini'
-        self.home_widi_pass = 'I9pReli93nYIerjnO5'
+        self.home_wifi_ssid = 'STARLINK'
+        # self.home_widi_pass = 'I9pReli93nYIerjnO5'
         self.wifi: str = network.WLAN(network.STA_IF)
 
     def connect_wifi(self):
         self.wifi.active(True)
         if not self.wifi.isconnected():
             print(f"Connecting to WIFI network -> {self.home_wifi_ssid}... ")
-            self.wifi.connect(self.home_wifi_ssid, self.home_widi_pass)
+            self.wifi.connect(self.home_wifi_ssid)
 
             # Wait until connected
             while not self.wifi.isconnected():
@@ -63,4 +63,3 @@ class BoardManager:
 if __name__ == '__main__':
     board = BoardManager()
     board.start()
-
